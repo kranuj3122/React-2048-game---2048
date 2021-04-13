@@ -5,8 +5,8 @@ export default function Board({ GridSize }) {
   let [grid, setGrid] = useState(initGrid);
   let [score, setScore] = useState(0);
   let [gameOver, setGameOver] = useState(false);
-  //   grid[1][2] = 2;
-  //   grid[3][4] = 4;
+    grid[1][2] = 2;
+
   const addNewNumber = (copiedGrid) => {
     let freeSpcaes = [];
     for (let i = 0; i < GridSize; i++) {
