@@ -131,6 +131,9 @@ export default function Board({ GridSize }) {
       window.removeEventListener("keydown", handleKeyDownEvent);
     };
   }, [grid]);
+  useEffect(() => {
+    addNewNumber([...grid]);
+  }, []);
   return (
     <>
       <h1>
