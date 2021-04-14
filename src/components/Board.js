@@ -133,9 +133,7 @@ export default function Board({ GridSize }) {
     };
   }, [grid]);
   useEffect(() => {
-    grid[0][4] = 2;
-    grid[3][4] = 2;
-    // addNewNumber([...grid]);
+    addNewNumber([...grid]);
   }, []);
   return (
     <>
