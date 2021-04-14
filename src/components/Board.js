@@ -5,7 +5,6 @@ export default function Board({ GridSize }) {
   let [grid, setGrid] = useState(initGrid);
   let [score, setScore] = useState(0);
   let [gameOver, setGameOver] = useState(false);
-  // grid[1][2] = 2;
 
   const addNewNumber = (copiedGrid) => {
     let freeSpcaes = [];
@@ -21,7 +20,7 @@ export default function Board({ GridSize }) {
     }
     if (freeSpcaes.length === 0) {
       setGameOver(true);
-      return;
+      // return;
     }
     let randomFreeSpace = Math.floor(Math.random() * freeSpcaes.length);
     copiedGrid[freeSpcaes[randomFreeSpace].row][
@@ -30,7 +29,9 @@ export default function Board({ GridSize }) {
     setGrid(copiedGrid);
   };
   const topShift = () => {
+    console.table(grid);
     let gridCopy = transpose(grid);
+    console.table(gridCopy);
     gridCopy = gridCopy.map((row) => {
       let rowCopy = shiftAll("left", row);
       mergeLeft(rowCopy);
@@ -132,7 +133,9 @@ export default function Board({ GridSize }) {
     };
   }, [grid]);
   useEffect(() => {
-    addNewNumber([...grid]);
+    grid[0][4] = 2;
+    grid[3][4] = 2;
+    // addNewNumber([...grid]);
   }, []);
   return (
     <>
